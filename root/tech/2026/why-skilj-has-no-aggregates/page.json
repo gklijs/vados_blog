@@ -1,0 +1,11 @@
+{
+  "title": "Why skilj has no aggregates",
+  "subTitle": "22 October 2026",
+  "image": "/photos/sun-on-the-water",
+  "icon": "file-document-outline",
+  "summary": "Dynamic Consistency Boundaries instead of aggregates: how skilj checks a rule that spans a student and a course in one decision, and what it costs.",
+  "content": "post.md",
+  "order": 1,
+  "leftNotifications": [],
+  "rightNotifications": []
+}

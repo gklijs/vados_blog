@@ -1,0 +1,35 @@
+{
+  "title": "Photos",
+  "list": [
+    {
+      "title": "Batman, up close",
+      "fileName": "batman-up-close.jpg",
+      "altText": "Close-up of a LEGO Batman minifigure in sunlight, pointing a blaster towards the camera, framed by a dark round vignette"
+    },
+    {
+      "title": "Sun on the water",
+      "fileName": "sun-on-the-water.jpg",
+      "altText": "Low afternoon sun reflecting on a moat that runs along an old brick city wall, with autumn trees, a green meadow and a sky full of contrails"
+    },
+    {
+      "title": "Train in a hurry",
+      "fileName": "train-in-a-hurry.jpg",
+      "altText": "A yellow and blue train blurred into a streak by a long exposure as it passes under overhead wires, with sharp office buildings and a parking lot around it"
+    },
+    {
+      "title": "Path through the trees",
+      "fileName": "path-through-the-trees.jpg",
+      "altText": "A leaf-covered path running straight through a tunnel of trees, with low sun shining through the leaves and dappled light on the ground"
+    },
+    {
+      "title": "Where the roads meet the sea",
+      "fileName": "where-the-roads-meet-the-sea.jpg",
+      "altText": "A rocky coastline on Tenerife where a highway on a viaduct, a covered road along the cliff and industrial piers with a yellow walkway all come together above deep blue water"
+    },
+    {
+      "title": "Floor after floor",
+      "fileName": "floor-after-floor.jpg",
+      "altText": "Two tall grey residential towers on Tenerife, side by side against a blue sky, with lower buildings, palm trees and a parking lot in front"
+    }
+  ]
+}

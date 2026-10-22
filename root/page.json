@@ -1,0 +1,34 @@
+{
+  "title": "Gerard Klijs",
+  "subTitle": "Software, event sourcing and Rust",
+  "image": null,
+  "icon": null,
+  "summary": "Gerard Klijs writes about software, event sourcing and Rust, from real work, and now and then about books and society.",
+  "content": "<p>I'm a software developer from Den Bosch, in the Netherlands. During office hours I mostly write Java, currently at Alliander. Before and after, it's Clojure, Rust and whatever else catches my interest.</p><p>The thread through most of it is event sourcing. I built an event store on Kafka (<a href=\"https://github.com/gklijs/bkes\">bkes</a>), worked with Axon (<a href=\"https://github.com/gklijs/bank-axon-graphql\">bank-axon-graphql</a>), and these days I'm building <a href=\"https://github.com/gklijs/SkilJ\">skilj</a>, an event-sourcing library for Rust on Postgres. I've spoken about this at Kafka Summit, GraphQL Summit (now Apollo Summit), GraphQL Conf and <a href=\"https://bobkonf.de/2021/klijs.html\">BOB 2021</a>.</p><h2>About this blog</h2><p>I write when I have something to say, not on a schedule. Most posts come out of things I built or ran into at work, so expect concrete examples rather than theory. Most of it is about software, but a book review or a view on politics and society may show up as well.</p>",
+  "order": null,
+  "leftNotifications": [
+    {
+      "content": "<p>Event sourcing in Rust on Postgres, with Dynamic Consistency Boundaries instead of aggregates.</p>",
+      "title": "skilj",
+      "image": null,
+      "url": "https://github.com/gklijs/SkilJ",
+      "color": "White"
+    },
+    {
+      "content": "<p>The static site generator, built around Bulma, that this blog is made with.</p>",
+      "title": "vados",
+      "image": null,
+      "url": "https://github.com/gklijs/vados",
+      "color": "White"
+    }
+  ],
+  "rightNotifications": [
+    {
+      "content": "<p>A Rust crate to encode and decode Kafka messages using Confluent's Schema Registry.</p>",
+      "title": "Schema Registry Converter",
+      "image": null,
+      "url": "https://github.com/gklijs/schema_registry_converter",
+      "color": "White"
+    }
+  ]
+}

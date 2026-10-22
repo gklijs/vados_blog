@@ -1,0 +1,15 @@
+{
+  "name": "gklijs-blog",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "sass --load-path=node_modules sass/main.scss:public/css/main.min.css --style=compressed --no-source-map"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4"
+  },
+  "devDependencies": {
+    "netlify-plugin-cache": "^1.0.3",
+    "sass": "^1.77.6"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "skilj 0.0.10 speaks Federation",
+  "subTitle": "11 October 2026",
+  "image": "/photos/where-the-roads-meet-the-sea",
+  "icon": "graphql",
+  "summary": "skilj joins a supergraph as an Apollo Federation v2 subgraph, with consistency queries, 25-50x faster catch-up and database epochs.",
+  "content": "post.md",
+  "order": 5,
+  "leftNotifications": [],
+  "rightNotifications": []
+}

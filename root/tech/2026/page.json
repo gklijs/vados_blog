@@ -1,0 +1,55 @@
+{
+  "title": "2026",
+  "subTitle": "Tech posts from 2026",
+  "image": null,
+  "icon": "calendar",
+  "summary": "Posts about software, event sourcing and Rust from 2026.",
+  "content": "<p>Everything I wrote about software, event sourcing and Rust in 2026, newest first.</p>",
+  "order": 1,
+  "leftNotifications": [
+    {
+      "content": "<p class=\"post-date\">22 October 2026</p><p>Dynamic Consistency Boundaries instead of aggregates: how skilj checks a rule that spans a student and a course in one decision, and what it costs.</p>",
+      "title": "Why skilj has no aggregates",
+      "image": "/photos/sun-on-the-water",
+      "url": "/tech/2026/why-skilj-has-no-aggregates",
+      "color": "White"
+    },
+    {
+      "content": "<p class=\"post-date\">19 October 2026</p><p>The first skilj release with a compatibility promise, what it does, why the name fits, and an honest word on where it stands.</p>",
+      "title": "skilj 0.1.0: separating things, on purpose",
+      "image": "/photos/path-through-the-trees",
+      "url": "/tech/2026/skilj-0-1-0",
+      "color": "White"
+    },
+    {
+      "content": "<p class=\"post-date\">11 October 2026</p><p>skilj joins a supergraph as an Apollo Federation v2 subgraph, with consistency queries, 25-50x faster catch-up and database epochs.</p>",
+      "title": "skilj 0.0.10 speaks Federation",
+      "image": "/photos/where-the-roads-meet-the-sea",
+      "url": "/tech/2026/skilj-0-0-10-federation",
+      "color": "White"
+    }
+  ],
+  "rightNotifications": [
+    {
+      "content": "<p class=\"post-date\">22 October 2026</p><p>Eight years after 0.1.0, the Rust crate for Kafka's Schema Registry gets its biggest update: runtime Protobuf encoding, schema ids in headers, and 7.5 million downloads.</p>",
+      "title": "schema_registry_converter 6.0",
+      "image": "/photos/train-in-a-hurry",
+      "url": "/tech/2026/schema-registry-converter-6",
+      "color": "White"
+    },
+    {
+      "content": "<p class=\"post-date\">14 October 2026</p><p>Measurements on moving old event payloads to S3, why DCB keeps the tag index hot forever, and an open question on when an event can go cold.</p>",
+      "title": "Tiered storage for a DCB event store?",
+      "image": "/photos/floor-after-floor",
+      "url": "/tech/2026/tiered-storage-for-dcb",
+      "color": "White"
+    },
+    {
+      "content": "<p class=\"post-date\">7 October 2026</p><p>Four years after shipping a static site generator without a binary, vados gets a command line: init, check and authoring commands.</p>",
+      "title": "vados 0.1.0: now you can run it",
+      "image": "/photos/batman-up-close",
+      "url": "/tech/2026/vados-0-1-0",
+      "color": "White"
+    }
+  ]
+}

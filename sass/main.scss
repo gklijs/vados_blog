@@ -1,0 +1,133 @@
+// Bulma variables must be set before Bulma itself is imported.
+// High contrast: near-black and white, with magenta and pink as accents.
+// Contrast (WCAG): ink on white 18.9:1, magenta on white 5.8:1, white on
+// magenta 5.8:1, pink on ink 8.0:1, code text on ink 16.6:1.
+$blog-ink: #111111;
+$blog-paper: #f0f0f0;
+$blog-magenta: #c8005a;
+$blog-pink: #ff7eb6;
+
+$primary: $blog-magenta;
+$text: $blog-ink;
+$text-strong: $blog-ink;
+$title-color: $blog-ink;
+$link: $blog-magenta;
+$link-hover: $blog-ink;
+
+// vados colours the navbar with Bulma's "warning" colour by default.
+$warning: $blog-ink;
+$warning-invert: #ffffff;
+// vados renders links to sub pages as "info" notification tiles.
+$info: $blog-magenta;
+$info-invert: #ffffff;
+
+$footer-background-color: $blog-ink;
+$footer-color: #ffffff;
+
+$code: $blog-magenta;
+$code-background: #e4e4e4;
+$pre: #f0f0f0;
+$pre-background: $blog-ink;
+
+@import "bulma/bulma";
+
+// Used as `backgroundClass` in root/main.json, so the white content blocks
+// stand out against the page.
+.has-background-blog {
+  background-color: $blog-paper;
+}
+
+// The pink pop: navbar hover and the active menu tab.
+.navbar.is-warning .navbar-item:hover,
+.navbar.is-warning .navbar-item.is-active {
+  background-color: $blog-ink;
+  color: $blog-pink;
+}
+.navbar.is-warning .navbar-item.is-tab.is-active {
+  border-bottom-color: $blog-pink;
+}
+
+// Section headings get a pink underline, so a long post is easy to scan.
+.content h2 {
+  border-bottom: 0.2em solid $blog-pink;
+  display: inline-block;
+  padding-bottom: 0.1em;
+}
+
+// Sub-page tiles turn black on hover, so it is clear they are links.
+.notification.is-info:hover {
+  background-color: $blog-ink;
+}
+
+.footer a {
+  color: $blog-pink;
+}
+.footer a:hover {
+  color: #ffffff;
+}
+
+// Long code lines scroll inside their block instead of widening the page.
+.content pre {
+  overflow-x: auto;
+}
+
+// Social icons are white: brand colours are too dark on the black navbar,
+// and vados sets a recognised provider's brand colour inline (ignoring
+// menu.json's `color`), so overriding it needs !important.
+.navbar.is-warning .navbar-item .icon {
+  color: #ffffff !important;
+}
+.navbar.is-warning .navbar-item:hover .icon {
+  color: $blog-pink !important;
+}
+
+// Post cards on a year page: white with a magenta edge, black on hover.
+.notification.is-white {
+  border-left: 0.4em solid $blog-magenta;
+}
+.notification.is-white:hover {
+  background-color: $blog-ink;
+  color: #ffffff;
+}
+.notification.is-white:hover .title {
+  color: #ffffff;
+}
+.post-date {
+  color: $blog-magenta;
+  font-weight: 600;
+}
+.notification.is-white:hover .post-date {
+  color: $blog-pink;
+}
+
+// Short pages: the area below the footer stays black instead of white.
+html {
+  background-color: $blog-ink;
+}
+.notification.is-white .title {
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
+}
+
+// Bulma tiles are flex items, which won't shrink below their content's width,
+// so a long code line pushed the post under the side tiles. Let them shrink;
+// the code block scrolls instead.
+.tile,
+#main-content-box {
+  min-width: 0;
+}
+
+// Side tiles keep their own height instead of stretching to the main column's.
+.tile.is-ancestor > .tile.is-vertical.is-parent > .tile.is-child {
+  flex-grow: 0;
+}
+
+// Post cards on a year page use the full width when the right column is empty.
+#child-tiles-right:not(:has(*)) {
+  display: none;
+}
+
+.photo-settings {
+  color: #555555;
+  font-size: 0.85em;
+}

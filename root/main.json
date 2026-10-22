@@ -1,0 +1,16 @@
+{
+  "siteTitle": "Gerard Klijs",
+  "description": "Writing by Gerard Klijs on software, event sourcing and Rust, and now and then on books and the world.",
+  "favicon": "favicon.svg",
+  "jsFiles": [],
+  "includeDefaultJs": null,
+  "cssFiles": [
+    "/css/main.min.css",
+    "https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+  ],
+  "includeDefaultCss": false,
+  "backgroundClass": "has-background-blog",
+  "navbarColor": null,
+  "language": "en",
+  "footerContent": "<p>Written by <a href=\"https://www.linkedin.com/in/%F0%9F%92%BBgerard-klijs%F0%9F%A6%80-416b3744/\">Gerard Klijs</a>.</p><p><small>Built with <a href=\"https://github.com/gklijs/vados\">vados</a> and <a href=\"https://bulma.io\">Bulma</a>. Source on <a href=\"https://github.com/gklijs/vados_blog\">GitHub</a>.</small></p>"
+}
