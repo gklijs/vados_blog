@@ -34,7 +34,8 @@ $pre-background: $blog-ink;
 // Add a module back here when a page starts using it.
 @import "bulma/sass/utilities/_all";
 // Bulma writes every button, notification and navbar variant once per colour;
-// keep just the colours the site uses (navbar, tiles, cards, Bulma button).
+// keep just the colours the site uses: warning (navbar), info (side tiles),
+// white (cards) and primary (vados's Luma register button).
 $colors: map-remove($colors, "black", "light", "dark", "link", "success", "danger");
 @import "bulma/sass/base/_all";
 @import "bulma/sass/elements/box";
@@ -182,8 +183,8 @@ html {
   .subtitle.is-3 {
     font-size: 1.5rem;
   }
-  .notification .title,
-  .notification.is-white .title {
+  // The side tiles' titles; the white cards keep their 1.4rem from above.
+  .notification .title {
     font-size: 1.5rem;
   }
   // Bulma keeps room on the right for a close button the cards don't have.
