@@ -8,6 +8,20 @@
   "order": null,
   "leftNotifications": [
     {
+      "content": "<p class=\"post-date\">22 October 2026</p><p>Dynamic Consistency Boundaries instead of aggregates: how skilj checks a rule that spans a student and a course in one decision, and what it costs.</p>",
+      "title": "Why skilj has no aggregates",
+      "image": "/photos/sun-on-the-water",
+      "url": "/tech/2026/why-skilj-has-no-aggregates",
+      "color": "White"
+    },
+    {
+      "content": "<p class=\"post-date\">19 October 2026</p><p>The first skilj release with a compatibility promise, what it does, why the name fits, and an honest word on where it stands.</p>",
+      "title": "skilj 0.1.0: separating things, on purpose",
+      "image": "/photos/path-through-the-trees",
+      "url": "/tech/2026/skilj-0-1-0",
+      "color": "White"
+    },
+    {
       "content": "<p>Event sourcing in Rust on Postgres, with Dynamic Consistency Boundaries instead of aggregates.</p>",
       "title": "skilj",
       "image": null,
@@ -23,6 +37,20 @@
     }
   ],
   "rightNotifications": [
+    {
+      "content": "<p class=\"post-date\">22 October 2026</p><p>Eight years after 0.1.0, the Rust crate for Kafka's Schema Registry gets its biggest update: runtime Protobuf encoding, schema ids in headers, and 7.5 million downloads.</p>",
+      "title": "schema_registry_converter 6.0",
+      "image": "/photos/train-in-a-hurry",
+      "url": "/tech/2026/schema-registry-converter-6",
+      "color": "White"
+    },
+    {
+      "content": "<p class=\"post-date\">14 October 2026</p><p>Measurements on moving old event payloads to S3, why DCB keeps the tag index hot forever, and an open question on when an event can go cold.</p>",
+      "title": "Tiered storage for a DCB event store?",
+      "image": "/photos/floor-after-floor",
+      "url": "/tech/2026/tiered-storage-for-dcb",
+      "color": "White"
+    },
     {
       "content": "<p>A Rust crate to encode and decode Kafka messages using Confluent's Schema Registry.</p>",
       "title": "Schema Registry Converter",

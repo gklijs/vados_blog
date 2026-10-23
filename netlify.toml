@@ -4,7 +4,7 @@
   # and set as default. Rust and vados are restored from the cache below when
   # available, so the toolchain only downloads on a cold cache and `cargo install`
   # only rebuilds vados when the pinned version below changes.
-  command = "([ -f \"$HOME/.cargo/env\" ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain none) && source \"$HOME/.cargo/env\" && rustup toolchain install stable --profile minimal && rustup default stable && cargo install vados --version 0.2.0 --locked && npm install && npm run build && vados generate --source root --img-source imgroot --destination public"
+  command = "([ -f \"$HOME/.cargo/env\" ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain none) && source \"$HOME/.cargo/env\" && rustup toolchain install stable --profile minimal && rustup default stable && cargo install vados --version 0.2.0 --locked && npm install && npm run build && vados generate --source root --img-source imgroot --destination public && npm run icons"
 
 # Keeps the Rust toolchain and the compiled vados binary between builds.
 # $HOME is /opt/buildhome on Netlify's build image.
@@ -12,3 +12,18 @@
   package = "netlify-plugin-cache"
   [plugins.inputs]
     paths = ["/opt/buildhome/.cargo", "/opt/buildhome/.rustup"]
+
+# The icon font's name carries a hash of its contents (see icons.mjs), so it
+# never changes under the same name.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Image variants keep their name when a photo is replaced, so they are cached
+# for a week rather than forever. HTML and CSS keep Netlify's default of
+# revalidating on every visit.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
