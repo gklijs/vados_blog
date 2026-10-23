@@ -5,7 +5,7 @@
   "icon": "database-arrow-down-outline",
   "summary": "Measurements on moving old event payloads to S3, why DCB keeps the tag index hot forever, and an open question on when an event can go cold.",
   "content": "post.md",
-  "order": 4,
+  "order": 5,
   "leftNotifications": [],
   "rightNotifications": []
 }

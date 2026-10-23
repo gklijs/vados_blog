@@ -5,7 +5,7 @@
   "icon": "graphql",
   "summary": "skilj joins a supergraph as an Apollo Federation v2 subgraph, with consistency queries, 25-50x faster catch-up and database epochs.",
   "content": "post.md",
-  "order": 5,
+  "order": 6,
   "leftNotifications": [],
   "rightNotifications": []
 }

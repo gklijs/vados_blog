@@ -5,7 +5,7 @@
   "icon": "web",
   "summary": "Four years after shipping a static site generator without a binary, vados gets a command line: init, check and authoring commands.",
   "content": "post.md",
-  "order": 6,
+  "order": 7,
   "leftNotifications": [],
   "rightNotifications": []
 }
