@@ -4,7 +4,7 @@
   "image": null,
   "icon": "code-braces",
   "summary": "Posts about software, event sourcing and Rust.",
-  "content": "<p>Posts about software, event sourcing and Rust, by year.</p><p><strong>Latest:</strong> <a href=\"/tech/2026/why-skilj-has-no-aggregates\">Why skilj has no aggregates</a></p>",
+  "content": "<p>Posts about software, event sourcing and Rust, by year.</p><p><strong>Latest:</strong> <a href=\"/tech/2026/skilj-and-security\">What skilj can and can't keep safe</a></p>",
   "order": 1,
   "leftNotifications": [],
   "rightNotifications": []

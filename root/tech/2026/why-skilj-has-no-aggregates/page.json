@@ -5,7 +5,7 @@
   "icon": "file-document-outline",
   "summary": "Dynamic Consistency Boundaries instead of aggregates: how skilj checks a rule that spans a student and a course in one decision, and what it costs.",
   "content": "post.md",
-  "order": 1,
+  "order": 2,
   "leftNotifications": [],
   "rightNotifications": []
 }

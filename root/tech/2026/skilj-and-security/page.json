@@ -1,0 +1,11 @@
+{
+  "title": "What skilj can and can't keep safe",
+  "subTitle": "23 October 2026",
+  "image": "/photos/batman-up-close",
+  "icon": "shield-lock-outline",
+  "summary": "An honest inventory of security in skilj: what the library prevents, what it can't, and what AI changed about the things we used to take for granted.",
+  "content": "post.md",
+  "order": 1,
+  "leftNotifications": [],
+  "rightNotifications": []
+}
