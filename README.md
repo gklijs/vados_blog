@@ -14,7 +14,7 @@ A static site built with [vados](https://github.com/gklijs/vados), served at blo
 - `sass/main.scss` -- overrides Bulma's variables before importing the parts of it the site uses; rebuilt by
   `npm run build` into `public/css/main.min.css`.
 - `icons.mjs` -- run by `npm run icons` after `vados generate`: publishes a subset of the Material Design Icons font with
-  only the icons the generated pages use, and `public/css/icons.css` for them.
+  only the icons the generated pages use, `public/css/icons.css` for them, and the font's license and notice.
 
 ## Local development
 
@@ -30,8 +30,8 @@ python3 serve.py
 
 ## Deployment
 
-Deploys to [Netlify](https://www.netlify.com/): connect the repository and `netlify.toml` installs Rust, `vados` and
-the Sass build.
+Deploys to [Netlify](https://www.netlify.com/): connect the repository and `netlify.toml` installs Rust, `vados`, the Sass
+build and the icon subset.
 
 ## Copyright
 

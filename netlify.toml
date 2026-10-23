@@ -13,10 +13,11 @@
   [plugins.inputs]
     paths = ["/opt/buildhome/.cargo", "/opt/buildhome/.rustup"]
 
-# The icon font's name carries a hash of its contents (see icons.mjs), so it
-# never changes under the same name.
+# The icon font's name carries a hash of its contents (see icons.mjs), so the
+# font never changes under the same name. The license and notice next to it
+# keep the default revalidation.
 [[headers]]
-  for = "/fonts/*"
+  for = "/fonts/mdi-*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
