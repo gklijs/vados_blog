@@ -2,6 +2,11 @@
   "title": "Photos",
   "list": [
     {
+      "title": "Batman, grappling gun",
+      "fileName": "batman-grappling-gun.jpg",
+      "altText": "Close-up of a LEGO Batman minifigure with a black cape and a grin, aiming a black grappling gun at the camera against a bright, blown-out background"
+    },
+    {
       "title": "Batman, up close",
       "fileName": "batman-up-close.jpg",
       "altText": "Close-up of a LEGO Batman minifigure in sunlight, pointing a blaster towards the camera, framed by a dark round vignette"
