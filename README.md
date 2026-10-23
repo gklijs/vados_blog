@@ -9,10 +9,12 @@ A static site built with [vados](https://github.com/gklijs/vados), served at blo
 - `imgroot/` -- the image tree: one `images.json` per directory of images to publish. Photos live in
   `imgroot/photos/`, resized to 2400 px wide with their metadata stripped (vados's largest variant is 1972 px), and each
   has a page under `root/photos/<year>/<slug>/` with the photo as its `image`.
-- `year_cards.py` -- rebuilds each year page's post cards and the section's "Latest" link from the posts' own `page.json`;
-  run it after adding a post. Give the newest post the lowest `order`.
-- `sass/main.scss` -- overrides Bulma's variables before importing it; rebuilt by `npm run build` into
-  `public/css/main.min.css`.
+- `year_cards.py` -- rebuilds each year page's post cards, the section's "Latest" link and the home page's latest posts
+  from the posts' own `page.json`; run it after adding a post. Give the newest post the lowest `order`.
+- `sass/main.scss` -- overrides Bulma's variables before importing the parts of it the site uses; rebuilt by
+  `npm run build` into `public/css/main.min.css`.
+- `icons.mjs` -- run by `npm run icons` after `vados generate`: publishes a subset of the Material Design Icons font with
+  only the icons the generated pages use, and `public/css/icons.css` for them.
 
 ## Local development
 
@@ -22,9 +24,15 @@ npm install
 npm run build
 vados check --source root --img-source imgroot
 vados generate --source root --img-source imgroot --destination public
+npm run icons
+python3 serve.py
 ```
 
 ## Deployment
 
 Deploys to [Netlify](https://www.netlify.com/): connect the repository and `netlify.toml` installs Rust, `vados` and
 the Sass build.
+
+## Copyright
+
+The posts and photos are © Gerard Klijs (gklijs.tech, KvK 92872697), all rights reserved.

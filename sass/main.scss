@@ -29,7 +29,34 @@ $code-background: #e4e4e4;
 $pre: #f0f0f0;
 $pre-background: $blog-ink;
 
-@import "bulma/bulma";
+// Only the parts of Bulma that vados's templates and the posts use, instead
+// of all of "bulma/bulma": no forms, columns, cards, modals and the like.
+// Add a module back here when a page starts using it.
+@import "bulma/sass/utilities/_all";
+// Bulma writes every button, notification and navbar variant once per colour;
+// keep just the colours the site uses (navbar, tiles, cards, Luma button).
+$colors: map-remove($colors, "black", "light", "dark", "link", "success", "danger");
+@import "bulma/sass/base/_all";
+@import "bulma/sass/elements/box";
+@import "bulma/sass/elements/button";
+@import "bulma/sass/elements/container";
+@import "bulma/sass/elements/content";
+@import "bulma/sass/elements/icon";
+@import "bulma/sass/elements/image";
+@import "bulma/sass/elements/notification";
+@import "bulma/sass/elements/table";
+@import "bulma/sass/elements/title";
+@import "bulma/sass/elements/other";
+@import "bulma/sass/components/breadcrumb";
+@import "bulma/sass/components/menu";
+@import "bulma/sass/components/navbar";
+@import "bulma/sass/grid/tiles";
+@import "bulma/sass/helpers/flexbox";
+@import "bulma/sass/helpers/spacing";
+@import "bulma/sass/helpers/typography";
+@import "bulma/sass/helpers/visibility";
+@import "bulma/sass/layout/section";
+@import "bulma/sass/layout/footer";
 
 // Used as `backgroundClass` in root/main.json, so the white content blocks
 // stand out against the page.
@@ -130,4 +157,97 @@ html {
 .photo-settings {
   color: #555555;
   font-size: 0.85em;
+}
+
+// The hero image of a post sat flush against the first paragraph.
+#main-content-box > .image {
+  margin-bottom: 1.5rem;
+}
+
+// Phones: Bulma's "medium" text and size-1 titles left about 30 characters a
+// line, and the section's padding plus the box's left the text little room.
+@include mobile {
+  .section {
+    padding: 1.5rem 0.75rem;
+  }
+  #main-content-box {
+    padding: 1rem !important;
+  }
+  .content.is-medium {
+    font-size: 1.125rem;
+  }
+  .title.is-1 {
+    font-size: 2.25rem;
+  }
+  .subtitle.is-3 {
+    font-size: 1.5rem;
+  }
+  .notification .title {
+    font-size: 1.5rem;
+  }
+  // Bulma keeps room on the right for a close button the cards don't have.
+  .notification {
+    padding-right: 1.5rem;
+  }
+}
+
+// Touch screens show the menu on white, where the white icons above vanished.
+@include touch {
+  .navbar.is-warning .navbar-menu .icon {
+    color: $blog-ink !important;
+  }
+  .navbar.is-warning .navbar-menu a.navbar-item:hover .icon,
+  .navbar.is-warning .navbar-menu a.navbar-item.is-active .icon {
+    color: $blog-pink !important;
+  }
+}
+
+// Narrow phones (360 px and less): the site title, five social icons and the
+// burger don't fit side by side, and the burger got pushed off the screen.
+// Below this width the social icons move from the bar into the burger menu,
+// as a row.
+@media screen and (max-width: 379px) {
+  .navbar-brand .navbar-item.is-hidden-desktop {
+    display: none;
+  }
+  .navbar-menu .navbar-end {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .navbar-end .navbar-item.is-hidden-touch {
+    display: flex !important;
+  }
+}
+
+// With the social icons in the bar, a full-width brand squeezed the burger.
+.navbar-burger {
+  flex-shrink: 0;
+}
+
+// Phones stack the two card columns, which put the cards out of order (the
+// left column's 1, 3, 5, then the right's 2, 4, 6). Interleave them again:
+// the columns step aside and each card is ordered by its place.
+@include mobile {
+  #main-content > .tile.is-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0.75rem;
+  }
+  #child-tiles-left,
+  #child-tiles-right {
+    display: contents;
+  }
+  #child-tiles-left > .notification,
+  #child-tiles-right > .notification {
+    margin-bottom: 0;
+  }
+  @for $i from 0 through 49 {
+    #sub-l-#{$i} {
+      order: 2 * $i;
+    }
+    #sub-r-#{$i} {
+      order: 2 * $i + 1;
+    }
+  }
 }
