@@ -13,8 +13,9 @@ A static site built with [vados](https://github.com/gklijs/vados), served at blo
   from the posts' own `page.json`; run it after adding a post. Give the newest post the lowest `order`.
 - `sass/main.scss` -- overrides Bulma's variables before importing the parts of it the site uses; rebuilt by
   `npm run build` into `public/css/main.min.css`.
-- `icons.mjs` -- run by `npm run icons` after `vados generate`: publishes a subset of the Material Design Icons font with
-  only the icons the generated pages use, `public/css/icons.css` for them, and the font's license and notice.
+- `icons.mjs` -- run by `npm run icons` after `vados generate`: publishes a subset of the Material Design Icons font
+  with only the icons the generated pages use, `public/css/icons.css` for them, and the font's license and notice, with
+  the full Apache-2.0 text from `licenses/`.
 
 ## Local development
 

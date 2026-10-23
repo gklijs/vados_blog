@@ -18,33 +18,12 @@ Usage: python3 year_cards.py
 import json
 import os
 import re
-from datetime import date
+import sys
+from datetime import date, datetime
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "root")
 HOME_SECTIONS = ["tech"]
 HOME_POSTS = 4
-
-MONTHS = {}
-for number, name in enumerate(
-    (
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ),
-    start=1,
-):
-    MONTHS[name] = number
-    MONTHS[name[:3]] = number
-
 
 def load(path):
     with open(path, encoding="utf-8") as f:
@@ -93,26 +72,28 @@ def years_of(section_dir):
     return sorted((y for y in os.listdir(section_dir) if y.isdigit()), reverse=True)
 
 
-def post_date(year, post):
-    match = re.fullmatch(
-        r"(\d{1,2}) ([A-Za-z]+) (\d{4})", (post.get("subTitle") or "").strip()
-    )
-    if match:
-        day, month, year_text = match.groups()
-        month_number = MONTHS.get(month.capitalize())
-        if month_number:
-            try:
-                return date(int(year_text), month_number, int(day))
-            except ValueError:
-                pass
+def post_date(section, year, slug, post):
+    text = (post.get("subTitle") or "").strip()
+    for fmt in ("%d %B %Y", "%d %b %Y"):
+        try:
+            return datetime.strptime(text, fmt).date()
+        except ValueError:
+            pass
+    print(f"warning: /{section}/{year}/{slug}: subTitle {text!r} isn't a date like '22 October 2026'; "
+          "sorting it as 1 January", file=sys.stderr)
     return date(int(year), 1, 1)
 
 
-def without_posts(cards, post_urls):
-    return [c for c in cards if c.get("url") not in post_urls]
+# Cards for posts of HOME_SECTIONS are the ones this script writes on the home
+# page, so they're replaced on every run, including those of posts that have
+# since been renamed or removed.
+HOME_POST_URL = re.compile(rf"/(?:{'|'.join(map(re.escape, HOME_SECTIONS))})/\d{{4}}/[^/]+")
 
 
-post_urls = set()
+def without_posts(cards):
+    return [c for c in cards if not HOME_POST_URL.fullmatch(c.get("url") or "")]
+
+
 for section in sorted(os.listdir(ROOT)):
     section_dir = os.path.join(ROOT, section)
     if not os.path.isdir(section_dir):
@@ -122,9 +103,7 @@ for section in sorted(os.listdir(ROOT)):
         year_page_path = os.path.join(section_dir, year, "page.json")
         posts = posts_of(os.path.join(section_dir, year))
         year_page = load(year_page_path)
-        cards = [card(section, year, slug, p) for slug, p in posts]
-        post_urls.update(c["url"] for c in cards)
-        set_cards(year_page, cards)
+        set_cards(year_page, [card(section, year, slug, p) for slug, p in posts])
         save(year_page_path, year_page)
         print(f"/{section}/{year}: {len(posts)} post(s)")
     if years:
@@ -151,17 +130,17 @@ latest_posts.sort(
         item[3]["title"],
     )
 )
-latest_posts.sort(key=lambda item: post_date(item[1], item[3]), reverse=True)
+latest_posts.sort(key=lambda item: post_date(*item), reverse=True)
 latest = [card(*item) for item in latest_posts[:HOME_POSTS]]
 home_path = os.path.join(ROOT, "page.json")
 home = load(home_path)
 
 # The other cards keep their own column, after the posts.
 home["leftNotifications"] = latest[0::2] + without_posts(
-    home.get("leftNotifications", []), post_urls
+    home.get("leftNotifications", [])
 )
 home["rightNotifications"] = latest[1::2] + without_posts(
-    home.get("rightNotifications", []), post_urls
+    home.get("rightNotifications", [])
 )
 save(home_path, home)
 print(f"/: {len(latest)} latest post(s)")
