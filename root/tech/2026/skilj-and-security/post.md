@@ -226,5 +226,5 @@ If you find one that isn't written down yet, I'd like to hear about it. If it's 
 rather than an issue. I'll write it into the log either way, and credit you there if you want the
 credit.
 
-*Photo: [Batman, up close](/photos/2026/batman-up-close), by me. He also works alone, and has also
+*Photo: [Batman, grappling gun](/photos/2026/batman-grappling-gun), by me. He also works alone, and has also
 never been audited.*
