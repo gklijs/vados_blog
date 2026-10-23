@@ -1,11 +1,11 @@
 {
   "title": "Batman, up close",
-  "subTitle": "15 October 2026",
+  "subTitle": null,
   "image": "/photos/batman-up-close",
   "icon": "camera",
   "summary": "A LEGO Batman, close enough to see the sparkle in the plastic.",
   "content": "<p>A LEGO Batman, close enough to see the sparkle in the plastic.</p><p class=\"photo-settings\">Sony RX10 V · f/11 · 1/8 s · ISO 64</p>",
-  "order": 2,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-15T15:00"
 }

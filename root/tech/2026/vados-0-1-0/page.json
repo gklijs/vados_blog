@@ -1,11 +1,11 @@
 {
   "title": "vados 0.1.0: now you can run it",
-  "subTitle": "7 October 2026",
+  "subTitle": "A static site generator that finally has a command line",
   "image": "/photos/batman-up-close",
   "icon": "web",
   "summary": "Four years after shipping a static site generator without a binary, vados gets a command line: init, check and authoring commands.",
   "content": "post.md",
-  "order": 7,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-07"
 }

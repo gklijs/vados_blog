@@ -1,11 +1,11 @@
 {
   "title": "Train in a hurry",
-  "subTitle": "15 October 2026",
+  "subTitle": null,
   "image": "/photos/train-in-a-hurry",
   "icon": "camera",
   "summary": "A 0.4 second exposure: long enough to turn a passing train into a streak, short enough for everything around it to stand still.",
   "content": "<p>A 0.4 second exposure: long enough to turn a passing train into a streak, short enough for everything around it to stand still.</p><p class=\"photo-settings\">Sony RX10 V · f/8 · 0.4 s · ISO 64</p>",
-  "order": 3,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-15T12:00"
 }

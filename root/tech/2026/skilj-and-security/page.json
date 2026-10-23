@@ -1,11 +1,11 @@
 {
   "title": "Skyhooks, cranes and a library I didn't write",
-  "subTitle": "23 October 2026",
+  "subTitle": "What a library I didn't write still prevents, and what it can't",
   "image": "/photos/batman-grappling-gun",
   "icon": "shield-lock-outline",
   "summary": "Much of skilj was written by AI, and I don't know every bolt of it. What it prevents anyway, what it can't, and why agents only get a keyhole.",
   "content": "post.md",
-  "order": 1,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-23"
 }

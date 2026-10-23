@@ -3,16 +3,13 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "sass --load-path=node_modules sass/main.scss:public/css/main.min.css --style=compressed --no-source-map --quiet-deps --silence-deprecation=import,global-builtin,color-functions",
-    "icons": "node icons.mjs"
+    "build": "sass --load-path=node_modules sass/main.scss:public/css/main.min.css --style=compressed --no-source-map --quiet-deps --silence-deprecation=import,global-builtin,color-functions"
   },
   "dependencies": {
     "bulma": "^0.9.4"
   },
   "devDependencies": {
-    "@mdi/font": "^7.4.47",
     "netlify-plugin-cache": "^1.0.3",
-    "sass": "^1.77.6",
-    "subset-font": "^2.9.0"
+    "sass": "^1.77.6"
   }
 }

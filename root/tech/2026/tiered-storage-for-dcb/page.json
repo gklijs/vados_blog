@@ -1,11 +1,11 @@
 {
   "title": "Tiered storage for a DCB event store?",
-  "subTitle": "14 October 2026",
+  "subTitle": "Moving old event payloads to S3, and when an event can go cold",
   "image": "/photos/floor-after-floor",
   "icon": "database-arrow-down-outline",
   "summary": "Measurements on moving old event payloads to S3, why DCB keeps the tag index hot forever, and an open question on when an event can go cold.",
   "content": "post.md",
-  "order": 5,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-14"
 }

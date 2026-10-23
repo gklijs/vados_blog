@@ -1,0 +1,11 @@
+{
+  "title": "vados 0.3.0: dates, feeds and fewer scripts",
+  "subTitle": "What changed since 0.1.0, and what this blog no longer needs",
+  "image": "/photos/fort-in-the-grass",
+  "icon": "web",
+  "summary": "Dated posts, Atom feeds, link previews, inline icons and highlighted code: what vados gained since 0.1.0, and the scripts this blog could delete.",
+  "content": "post.md",
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "date": "2026-10-23T14:00"
+}

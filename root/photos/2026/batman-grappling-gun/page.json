@@ -1,11 +1,11 @@
 {
   "title": "Batman, grappling gun",
-  "subTitle": "23 October 2026",
+  "subTitle": null,
   "image": "/photos/batman-grappling-gun",
   "icon": "camera",
   "summary": "A LEGO Batman aiming his grappling gun straight at the camera.",
   "content": "<p>A LEGO Batman aiming his grappling gun straight at the camera.</p><p class=\"photo-settings\">Sony RX10 V · f/8 · 1/4 s · ISO 200</p>",
-  "order": 1,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-23T09:00"
 }

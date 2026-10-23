@@ -5,12 +5,17 @@
   "jsFiles": [],
   "includeDefaultJs": null,
   "cssFiles": [
-    "/css/main.min.css",
-    "/css/icons.css"
+    "/css/main.min.css"
   ],
   "includeDefaultCss": false,
   "backgroundClass": "has-background-blog",
   "navbarColor": null,
   "language": "en",
-  "footerContent": "<p>Written by <a rel=\"me\" href=\"https://www.linkedin.com/in/%F0%9F%92%BBgerard-klijs%F0%9F%A6%80-416b3744/\">Gerard Klijs</a>. Follow me on <a rel=\"me\" href=\"https://hachyderm.io/@gklijs\">Mastodon</a>.</p><p><small>Built with <a href=\"https://github.com/gklijs/vados\">vados</a> and <a href=\"https://bulma.io\">Bulma</a>. Source on <a href=\"https://github.com/gklijs/vados_blog\">GitHub</a>.</small></p><p><small>© 2026 Gerard Klijs · gklijs.tech · KvK 92872697 · All rights reserved.</small></p>"
+  "footerContent": "<p>Written by <a rel=\"me\" href=\"https://www.linkedin.com/in/%F0%9F%92%BBgerard-klijs%F0%9F%A6%80-416b3744/\">Gerard Klijs</a>. Follow me on <a rel=\"me\" href=\"https://hachyderm.io/@gklijs\">Mastodon</a>.</p><p><small>Built with <a href=\"https://github.com/gklijs/vados\">vados</a> and <a href=\"https://bulma.io\">Bulma</a>. Source on <a href=\"https://github.com/gklijs/vados_blog\">GitHub</a>.</small></p><p><small>© 2026 Gerard Klijs · gklijs.tech · KvK 92872697 · All rights reserved.</small></p>",
+  "siteUrl": "https://blog.gklijs.tech",
+  "author": {
+    "name": "Gerard Klijs",
+    "url": "https://blog.gklijs.tech"
+  },
+  "defaultImage": "/photos/sun-on-the-water"
 }

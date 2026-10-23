@@ -1,11 +1,11 @@
 {
   "title": "Sun on the water",
-  "subTitle": "15 October 2026",
+  "subTitle": null,
   "image": "/photos/sun-on-the-water",
   "icon": "camera",
   "summary": "Low afternoon sun on the water along an old city wall, with the first autumn colours in the trees.",
   "content": "<p>Low afternoon sun on the water along an old city wall, with the first autumn colours in the trees.</p><p class=\"photo-settings\">Sony RX10 V · f/11 · 1/3 s · ISO 64</p>",
-  "order": 4,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-15T09:00"
 }

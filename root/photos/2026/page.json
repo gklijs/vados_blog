@@ -6,57 +6,12 @@
   "summary": "Photos by Gerard Klijs from 2026.",
   "content": "<p>Photos from 2026, newest first.</p>",
   "order": 1,
-  "leftNotifications": [
-    {
-      "content": "<p class=\"post-date\">23 October 2026</p><p>A LEGO Batman aiming his grappling gun straight at the camera.</p>",
-      "title": "Batman, grappling gun",
-      "image": "/photos/batman-grappling-gun",
-      "url": "/photos/2026/batman-grappling-gun",
-      "color": "White"
-    },
-    {
-      "content": "<p class=\"post-date\">15 October 2026</p><p>A 0.4 second exposure: long enough to turn a passing train into a streak, short enough for everything around it to stand still.</p>",
-      "title": "Train in a hurry",
-      "image": "/photos/train-in-a-hurry",
-      "url": "/photos/2026/train-in-a-hurry",
-      "color": "White"
-    },
-    {
-      "content": "<p class=\"post-date\">12 October 2026</p><p>A path through the trees, with low October sun finding its way through the leaves.</p>",
-      "title": "Path through the trees",
-      "image": "/photos/path-through-the-trees",
-      "url": "/photos/2026/path-through-the-trees",
-      "color": "White"
-    },
-    {
-      "content": "<p class=\"post-date\">23 September 2026</p><p>Roads, a viaduct and piers all coming together on the coast of Tenerife.</p>",
-      "title": "Where the roads meet the sea",
-      "image": "/photos/where-the-roads-meet-the-sea",
-      "url": "/photos/2026/where-the-roads-meet-the-sea",
-      "color": "White"
-    }
-  ],
-  "rightNotifications": [
-    {
-      "content": "<p class=\"post-date\">15 October 2026</p><p>A LEGO Batman, close enough to see the sparkle in the plastic.</p>",
-      "title": "Batman, up close",
-      "image": "/photos/batman-up-close",
-      "url": "/photos/2026/batman-up-close",
-      "color": "White"
-    },
-    {
-      "content": "<p class=\"post-date\">15 October 2026</p><p>Low afternoon sun on the water along an old city wall, with the first autumn colours in the trees.</p>",
-      "title": "Sun on the water",
-      "image": "/photos/sun-on-the-water",
-      "url": "/photos/2026/sun-on-the-water",
-      "color": "White"
-    },
-    {
-      "content": "<p class=\"post-date\">23 September 2026</p><p>Two towers on Tenerife, stacked floor after floor.</p>",
-      "title": "Floor after floor",
-      "image": "/photos/floor-after-floor",
-      "url": "/photos/2026/floor-after-floor",
-      "color": "White"
-    }
-  ]
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "childOrder": "dateDesc",
+  "latest": {
+    "from": "/photos/2026",
+    "limit": 50,
+    "depth": 1
+  }
 }

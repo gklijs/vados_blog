@@ -1,11 +1,11 @@
 {
   "title": "skilj 0.1.0: separating things, on purpose",
-  "subTitle": "19 October 2026",
+  "subTitle": "The first skilj release with a compatibility promise",
   "image": "/photos/path-through-the-trees",
   "icon": "tag-outline",
   "summary": "The first skilj release with a compatibility promise, what it does, why the name fits, and an honest word on where it stands.",
   "content": "post.md",
-  "order": 4,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-19"
 }

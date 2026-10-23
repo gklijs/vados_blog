@@ -1,11 +1,11 @@
 {
   "title": "schema_registry_converter 6.0",
-  "subTitle": "22 October 2026",
+  "subTitle": "The crate's biggest update in eight years",
   "image": "/photos/train-in-a-hurry",
   "icon": "package-variant",
   "summary": "Eight years after 0.1.0, the Rust crate for Kafka's Schema Registry gets its biggest update: runtime Protobuf encoding, schema ids in headers, and 7.5 million downloads.",
   "content": "post.md",
-  "order": 3,
   "leftNotifications": [],
-  "rightNotifications": []
+  "rightNotifications": [],
+  "date": "2026-10-22T09:00"
 }
