@@ -34,7 +34,7 @@ $pre-background: $blog-ink;
 // Add a module back here when a page starts using it.
 @import "bulma/sass/utilities/_all";
 // Bulma writes every button, notification and navbar variant once per colour;
-// keep just the colours the site uses (navbar, tiles, cards, Luma button).
+// keep just the colours the site uses (navbar, tiles, cards, Bulma button).
 $colors: map-remove($colors, "black", "light", "dark", "link", "success", "danger");
 @import "bulma/sass/base/_all";
 @import "bulma/sass/elements/box";
@@ -182,7 +182,8 @@ html {
   .subtitle.is-3 {
     font-size: 1.5rem;
   }
-  .notification .title {
+  .notification .title,
+  .notification.is-white .title {
     font-size: 1.5rem;
   }
   // Bulma keeps room on the right for a close button the cards don't have.
@@ -202,7 +203,7 @@ html {
   }
 }
 
-// Narrow phones (360 px and less): the site title, five social icons and the
+// Narrow phones (under 380 px): the site title, five social icons and the
 // burger don't fit side by side, and the burger got pushed off the screen.
 // Below this width the social icons move from the bar into the burger menu,
 // as a row.
@@ -242,6 +243,7 @@ html {
   #child-tiles-right > .notification {
     margin-bottom: 0;
   }
+  // A year page has far fewer than 50 posts; raise this if that ever changes.
   @for $i from 0 through 49 {
     #sub-l-#{$i} {
       order: 2 * $i;

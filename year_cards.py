@@ -9,8 +9,8 @@ post; it rewrites those cards from the posts' own page.json files, ordered by
 the section page's "Latest:" link at the newest post of the newest year.
 
 The home page gets cards for the newest HOME_POSTS posts of HOME_SECTIONS,
-ahead of its other cards (the project cards, which link elsewhere and are
-left as they are).
+by their `subTitle` date, ahead of its other cards (the project cards, which
+link elsewhere and are left as they are).
 
 Usage: python3 year_cards.py
 """
@@ -18,10 +18,32 @@ Usage: python3 year_cards.py
 import json
 import os
 import re
+from datetime import date
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "root")
 HOME_SECTIONS = ["tech"]
 HOME_POSTS = 4
+
+MONTHS = {}
+for number, name in enumerate(
+    (
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ),
+    start=1,
+):
+    MONTHS[name] = number
+    MONTHS[name[:3]] = number
 
 
 def load(path):
@@ -71,10 +93,26 @@ def years_of(section_dir):
     return sorted((y for y in os.listdir(section_dir) if y.isdigit()), reverse=True)
 
 
-def external(cards):
-    return [c for c in cards if not (c.get("url") or "").startswith("/")]
+def post_date(year, post):
+    match = re.fullmatch(
+        r"(\d{1,2}) ([A-Za-z]+) (\d{4})", (post.get("subTitle") or "").strip()
+    )
+    if match:
+        day, month, year_text = match.groups()
+        month_number = MONTHS.get(month.capitalize())
+        if month_number:
+            try:
+                return date(int(year_text), month_number, int(day))
+            except ValueError:
+                pass
+    return date(int(year), 1, 1)
 
 
+def without_posts(cards, post_urls):
+    return [c for c in cards if c.get("url") not in post_urls]
+
+
+post_urls = set()
 for section in sorted(os.listdir(ROOT)):
     section_dir = os.path.join(ROOT, section)
     if not os.path.isdir(section_dir):
@@ -84,7 +122,9 @@ for section in sorted(os.listdir(ROOT)):
         year_page_path = os.path.join(section_dir, year, "page.json")
         posts = posts_of(os.path.join(section_dir, year))
         year_page = load(year_page_path)
-        set_cards(year_page, [card(section, year, slug, p) for slug, p in posts])
+        cards = [card(section, year, slug, p) for slug, p in posts]
+        post_urls.update(c["url"] for c in cards)
+        set_cards(year_page, cards)
         save(year_page_path, year_page)
         print(f"/{section}/{year}: {len(posts)} post(s)")
     if years:
@@ -98,19 +138,30 @@ for section in sorted(os.listdir(ROOT)):
             save(section_page_path, section_page)
             print(f"/{section} latest: {p['title']}")
 
-latest = [
-    card(section, year, slug, p)
+latest_posts = [
+    (section, year, slug, p)
     for section in HOME_SECTIONS
     for year in years_of(os.path.join(ROOT, section))
     for slug, p in posts_of(os.path.join(ROOT, section, year))
-][:HOME_POSTS]
+]
+latest_posts.sort(
+    key=lambda item: (
+        item[3].get("order") is None,
+        item[3].get("order") or 0,
+        item[3]["title"],
+    )
+)
+latest_posts.sort(key=lambda item: post_date(item[1], item[3]), reverse=True)
+latest = [card(*item) for item in latest_posts[:HOME_POSTS]]
 home_path = os.path.join(ROOT, "page.json")
 home = load(home_path)
 
-
-
 # The other cards keep their own column, after the posts.
-home["leftNotifications"] = latest[0::2] + external(home["leftNotifications"])
-home["rightNotifications"] = latest[1::2] + external(home["rightNotifications"])
+home["leftNotifications"] = latest[0::2] + without_posts(
+    home.get("leftNotifications", []), post_urls
+)
+home["rightNotifications"] = latest[1::2] + without_posts(
+    home.get("rightNotifications", []), post_urls
+)
 save(home_path, home)
 print(f"/: {len(latest)} latest post(s)")
