@@ -127,7 +127,10 @@ supposed to be immutable, and people have the right to be forgotten.
 One part of skilj was designed with AI on the *calling* side. I saw the need for an agent that can
 operate on specific data, and only that. Giving an agent direct access to a database is risky,
 because an agent is not deterministic. The same prompt can do something sensible a hundred times
-and something creative the hundred-and-first.
+and something creative the hundred-and-first. Nietzsche wrote in his notebooks that there are no
+facts, only interpretations. For a language model that isn't a provocative position, it's the
+architecture. Whatever text reaches the agent, a ticket, an email, a web page, gets interpreted,
+and some of that text was written by someone hoping for a particular interpretation.
 
 So the REST API exists for narrowly scoped callers. A token is scoped to exactly one registered
 type: one command it may submit, or one kind of event it may read or create. It can be scoped to
