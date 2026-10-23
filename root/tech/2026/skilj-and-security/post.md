@@ -91,11 +91,14 @@ higher, and I can't honestly say it's cleared until someone other than me and my
 
 ## What skilj does prevent
 
-The guarantees I trust most are the ones that hold by construction, whatever the tests do:
+The guarantee I trust most is the one that holds by construction, whatever the tests do. **No
+command sneaks past its consistency check.** All commands of a bounded context are decided under
+one Postgres row lock, and the check, the events and the idempotency key commit or roll back
+together. Two people racing for the last seat don't both get it.
 
-- **No command sneaks past its consistency check.** All commands of a bounded context are decided
-  under one Postgres row lock, and the check, the events and the idempotency key commit or roll
-  back together. Two people racing for the last seat don't both get it.
+The rest is ordinary code with tests behind it, which, as established, is a crane and not a
+skyhook:
+
 - **Callers don't see what they can't use.** Each caller gets a GraphQL schema built from their own
   grants, so another tenant's types don't even exist for them. Before that, a query that merely
   *mentioned* a type would pass or fail validation depending on whether it existed, which is a very
@@ -195,7 +198,8 @@ A lot of review, all of it written down, but nobody has been paid to break it.
 Dennett wrote in *Intuition Pumps* that the chief trick to making good mistakes is not to hide them,
 especially not from yourself. The design log is, for a large part, a list of my mistakes and
 Claude's, and I've stopped trying to tell which was whose. What matters is that each one is written
-down, has a test that failed before the fix, and doesn't come back.
+down, and that the fix comes with a test that failed before it, so the same mistake has to find a
+new way in.
 
 If you find one that isn't written down yet, I'd like to hear about it. If it's a real hole, please
 use [GitHub's private vulnerability reporting](https://github.com/gklijs/SkilJ/security/advisories/new)

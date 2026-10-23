@@ -3,7 +3,7 @@
   "subTitle": "23 October 2026",
   "image": "/photos/batman-up-close",
   "icon": "shield-lock-outline",
-  "summary": "An honest inventory of security in skilj: what the library prevents, what it can't, and what AI changed about the things we used to take for granted.",
+  "summary": "Most of skilj was written by AI, and I don't know every bolt of it. What it prevents anyway, what it can't, and why agents only get a keyhole.",
   "content": "post.md",
   "order": 1,
   "leftNotifications": [],
