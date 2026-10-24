@@ -1,0 +1,11 @@
+{
+  "title": "vados 0.4.0: Bulma 1, dark mode and a way out of it",
+  "subTitle": "What moving to Bulma 1.0 changed, what this blog needed, and what is on the horizon",
+  "image": "/photos/on-the-horizon",
+  "icon": "web",
+  "summary": "vados 0.4.0 moves to Bulma 1.0 and its dark mode, lets a site pin one theme, and left this blog with less layout CSS and a few things to fix by hand.",
+  "content": "post.md",
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "date": "2026-10-24T17:00"
+}

@@ -1,4 +1,3 @@
-// Bulma variables must be set before Bulma itself is imported.
 // High contrast: near-black and white, with magenta and pink as accents.
 // Contrast (WCAG): ink on white 18.9:1, magenta on white 5.8:1, white on
 // magenta 5.8:1, pink on ink 8.0:1, code text on ink 16.6:1.
@@ -7,62 +6,147 @@ $blog-paper: #f0f0f0;
 $blog-magenta: #c8005a;
 $blog-pink: #ff7eb6;
 
-$primary: $blog-magenta;
-$text: $blog-ink;
-$text-strong: $blog-ink;
-$title-color: $blog-ink;
-$link: $blog-magenta;
-$link-hover: $blog-ink;
-
-// vados colours the navbar with Bulma's "warning" colour by default.
-$warning: $blog-ink;
-$warning-invert: #ffffff;
-// vados renders links to sub pages as "info" notification tiles.
-$info: $blog-magenta;
-$info-invert: #ffffff;
-
-$footer-background-color: $blog-ink;
-$footer-color: #ffffff;
-
-$code: $blog-magenta;
-$code-background: #e4e4e4;
-$pre: #f0f0f0;
-$pre-background: $blog-ink;
+// Bulma's variables are given as its utilities are first loaded, so this
+// comes before the other modules.
+@use "bulma/sass/utilities" with (
+  $primary: $blog-magenta,
+  $link: $blog-magenta,
+  // vados colours the navbar with Bulma's "warning" colour by default.
+  $warning: $blog-ink,
+  // vados renders links to sub pages as "info" notification tiles.
+  $info: $blog-magenta,
+  $text: $blog-ink,
+  $text-strong: $blog-ink
+);
 
 // Only the parts of Bulma that vados's templates and the posts use, instead
-// of all of "bulma/bulma": no forms, columns, cards, modals and the like.
-// Add a module back here when a page starts using it.
-@import "bulma/sass/utilities/_all";
-// Bulma writes every button, notification and navbar variant once per colour;
-// keep just the colours the site uses: warning (navbar), info (side tiles),
-// white (cards) and primary (vados's Luma register button).
-$colors: map-remove($colors, "black", "light", "dark", "link", "success", "danger");
-@import "bulma/sass/base/_all";
-@import "bulma/sass/elements/box";
-@import "bulma/sass/elements/button";
-@import "bulma/sass/elements/container";
-@import "bulma/sass/elements/content";
-@import "bulma/sass/elements/icon";
-@import "bulma/sass/elements/image";
-@import "bulma/sass/elements/notification";
-@import "bulma/sass/elements/table";
-@import "bulma/sass/elements/title";
-@import "bulma/sass/elements/other";
-@import "bulma/sass/components/breadcrumb";
-@import "bulma/sass/components/menu";
-@import "bulma/sass/components/navbar";
-@import "bulma/sass/grid/tiles";
-@import "bulma/sass/helpers/flexbox";
-@import "bulma/sass/helpers/spacing";
-@import "bulma/sass/helpers/typography";
-@import "bulma/sass/helpers/visibility";
-@import "bulma/sass/layout/section";
-@import "bulma/sass/layout/footer";
+// of all of "bulma/sass": no forms, cards, modals and the like. Add a module
+// back here when a page starts using it.
+@use "bulma/sass/utilities/mixins" as bm;
+@use "bulma/sass/themes";
+@use "bulma/sass/base";
+@use "bulma/sass/elements/block";
+@use "bulma/sass/elements/box";
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/content";
+@use "bulma/sass/elements/icon";
+@use "bulma/sass/elements/image";
+@use "bulma/sass/elements/notification";
+@use "bulma/sass/elements/table";
+@use "bulma/sass/elements/title";
+@use "bulma/sass/components/breadcrumb";
+@use "bulma/sass/components/menu";
+@use "bulma/sass/components/navbar";
+@use "bulma/sass/grid/columns";
+@use "bulma/sass/grid/grid";
+@use "bulma/sass/helpers/flexbox";
+@use "bulma/sass/helpers/gap";
+@use "bulma/sass/helpers/spacing";
+@use "bulma/sass/helpers/typography";
+@use "bulma/sass/helpers/visibility";
+@use "bulma/sass/layout/container";
+@use "bulma/sass/layout/footer";
+@use "bulma/sass/layout/section";
+
+// Colours that differ between the light and dark theme are CSS variables, set
+// for the reader's preference below; Bulma's own colours follow it by themselves.
+// Dark: pink on #0c0c0e 8.5:1, #f0f0f0 on #1b1c21 14.6:1, #b0b0b5 on #1b1c21 6.8:1.
+:root {
+  --blog-page: #{$blog-paper};
+  --blog-surface: #ffffff;
+  --blog-card: #f4f4f4;
+  --blog-card-ink: #{$blog-ink};
+  --blog-card-title: #{$blog-magenta};
+  --blog-accent: #{$blog-magenta};
+  --blog-muted: #555555;
+  --blog-footer: #{$blog-ink};
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blog-page: #0c0c0e;
+    --blog-surface: #1b1c21;
+    --blog-card: #1b1c21;
+    --blog-card-ink: #f0f0f0;
+    --blog-card-title: #{$blog-pink};
+    --blog-accent: #{$blog-pink};
+    --blog-muted: #b0b0b5;
+    --blog-footer: #000000;
+  }
+}
+
+// Bulma 1 only styles the footer's background, and the text colour is the
+// page's, so both are set here.
+.footer {
+  --bulma-footer-background-color: var(--blog-footer);
+  border-top: 0.25rem solid $blog-magenta;
+  color: #ffffff;
+  padding: 2.5rem 1.5rem 3rem;
+}
+.footer-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.footer-joke {
+  border-left: 0.2rem solid $blog-pink;
+  font-style: italic;
+  padding-left: 1rem;
+}
+.footer-legal {
+  font-size: 0.85em;
+  margin-top: 1.5rem;
+  opacity: 0.75;
+}
+// A bat, hidden in the footer's small print, linking to a photo of Batman.
+.footer .bat {
+  display: inline-block;
+  opacity: 0.2;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.footer .bat:hover,
+.footer .bat:focus-visible {
+  opacity: 1;
+  transform: rotate(-12deg) scale(1.4);
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer .bat {
+    transition: none;
+  }
+  .footer .bat:hover,
+  .footer .bat:focus-visible {
+    transform: none;
+  }
+}
+
+// vados gives the post cards on the home page the "link" colour. Keep them
+// light, with magenta titles, instead of Bulma's solid link colour.
+.notification.is-link {
+  background-color: var(--blog-card);
+  color: var(--blog-card-ink);
+  .title,
+  .subtitle {
+    color: var(--blog-card-title);
+  }
+}
+
+// vados hints the navbar's "warning" colour as light (theme-light), as it is in
+// Bulma's defaults; here it is near-black, so its text is set by hand.
+.navbar.is-warning .navbar-item,
+.navbar.is-warning .navbar-link {
+  color: #ffffff;
+}
 
 // Used as `backgroundClass` in root/main.json, so the white content blocks
 // stand out against the page.
 .has-background-blog {
-  background-color: $blog-paper;
+  background-color: var(--blog-page);
+}
+
+// On touch screens the open menu is near-black; Bulma gives its sub-menu items
+// a background of their own, which left white text on white.
+@include bm.touch {
+  .navbar.is-warning .navbar-menu .navbar-item {
+    background-color: transparent;
+  }
 }
 
 // The pink pop: navbar hover and the active menu tab.
@@ -111,7 +195,12 @@ $colors: map-remove($colors, "black", "light", "dark", "link", "success", "dange
 
 // Post cards on a year page: white with a magenta edge, black on hover.
 .notification.is-white {
+  background-color: var(--blog-surface);
   border-left: 0.4em solid $blog-magenta;
+  color: var(--blog-card-ink);
+}
+.notification.is-white .title {
+  color: var(--blog-card-ink);
 }
 .notification.is-white:hover {
   background-color: $blog-ink;
@@ -121,7 +210,7 @@ $colors: map-remove($colors, "black", "light", "dark", "link", "success", "dange
   color: #ffffff;
 }
 .post-date {
-  color: $blog-magenta;
+  color: var(--blog-accent);
   font-weight: 600;
 }
 .notification.is-white:hover .post-date {
@@ -130,33 +219,15 @@ $colors: map-remove($colors, "black", "light", "dark", "link", "success", "dange
 
 // Short pages: the area below the footer stays black instead of white.
 html {
-  background-color: $blog-ink;
+  background-color: var(--blog-footer);
 }
 .notification.is-white .title {
   font-size: 1.4rem;
   overflow-wrap: anywhere;
 }
 
-// Bulma tiles are flex items, which won't shrink below their content's width,
-// so a long code line pushed the post under the side tiles. Let them shrink;
-// the code block scrolls instead.
-.tile,
-#main-content-box {
-  min-width: 0;
-}
-
-// Side tiles keep their own height instead of stretching to the main column's.
-.tile.is-ancestor > .tile.is-vertical.is-parent > .tile.is-child {
-  flex-grow: 0;
-}
-
-// Post cards on a year page use the full width when the right column is empty.
-#child-tiles-right:not(:has(*)) {
-  display: none;
-}
-
 .photo-settings {
-  color: #555555;
+  color: var(--blog-muted);
   font-size: 0.85em;
 }
 
@@ -167,7 +238,7 @@ html {
 
 // Phones: Bulma's "medium" text and size-1 titles left about 30 characters a
 // line, and the section's padding plus the box's left the text little room.
-@include mobile {
+@include bm.mobile {
   .section {
     padding: 1.5rem 0.75rem;
   }
@@ -193,17 +264,6 @@ html {
   }
 }
 
-// Touch screens show the menu on white, where the white icons above vanished.
-@include touch {
-  .navbar.is-warning .navbar-menu .icon {
-    color: $blog-ink !important;
-  }
-  .navbar.is-warning .navbar-menu a.navbar-item:hover .icon,
-  .navbar.is-warning .navbar-menu a.navbar-item.is-active .icon {
-    color: $blog-pink !important;
-  }
-}
-
 // Narrow phones (under 380 px): the site title, five social icons and the
 // burger don't fit side by side, and the burger got pushed off the screen.
 // Below this width the social icons move from the bar into the burger menu,
@@ -221,36 +281,3 @@ html {
   }
 }
 
-// With the social icons in the bar, a full-width brand squeezed the burger.
-.navbar-burger {
-  flex-shrink: 0;
-}
-
-// Phones stack the two card columns, which put the cards out of order (the
-// left column's 1, 3, 5, then the right's 2, 4, 6). Interleave them again:
-// the columns step aside and each card is ordered by its place.
-@include mobile {
-  #main-content > .tile.is-horizontal {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0.75rem;
-  }
-  #child-tiles-left,
-  #child-tiles-right {
-    display: contents;
-  }
-  #child-tiles-left > .notification,
-  #child-tiles-right > .notification {
-    margin-bottom: 0;
-  }
-  // A year page has far fewer than 50 posts; raise this if that ever changes.
-  @for $i from 0 through 49 {
-    #sub-l-#{$i} {
-      order: 2 * $i;
-    }
-    #sub-r-#{$i} {
-      order: 2 * $i + 1;
-    }
-  }
-}
