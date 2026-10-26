@@ -58,6 +58,14 @@ about it? That it exists?
 
 ## Cyberpunk saw it coming
 
+<figure>
+  <img src="/img/society/neon-puddle-w986.webp"
+       srcset="/img/society/neon-puddle-w632.webp 632w, /img/society/neon-puddle-w986.webp 986w, /img/society/neon-puddle-w1479.webp 1479w"
+       sizes="(min-width: 800px) 760px, 100vw" width="986" height="657" loading="lazy"
+       alt="A dark street at night in Pattaya, with neon and lit signs in pink, blue, red and white reflected in a large puddle in the foreground">
+  <figcaption>Photo by PattayaPatrol, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:DFC_0505_Neon-lit_city_street_at_night_reflected_in_a_rain_puddle_colorful_signs_and_lights_mirrored_on_the_wet_pavement.jpg">via Wikimedia Commons</a>. Resized and converted to WebP.</figcaption>
+</figure>
+
 It's a bit ironic that the Cyberpunk season I saw such flat reactions to is set in a world that
 is about exactly this. In the world of Cyberpunk hardly anyone is watching film anymore. Why
 would you, when you can have a braindance? You don't watch a story, you live it, from inside
@@ -75,6 +83,14 @@ for everyone to create their own reality, which he wrote about in Chaos and Cybe
 The Politics of Ecstasy he argued for changing your own consciousness, to be free of what society
 wants you to see. A braindance is the commercial version of that idea: your reality, still, but
 sold to you by someone else.
+
+<figure>
+  <img src="/img/society/timothy-leary-1969-w986.webp"
+       srcset="/img/society/timothy-leary-1969-w632.webp 632w, /img/society/timothy-leary-1969-w986.webp 986w, /img/society/timothy-leary-1969-w1479.webp 1479w"
+       sizes="(min-width: 800px) 760px, 100vw" width="986" height="657" loading="lazy"
+       alt="Timothy Leary in a dark jacket, seen from the side on a stage in red-orange light, in front of a large crowd">
+  <figcaption>Timothy Leary on stage during a 1969 lecture tour at the State University of New York at Buffalo. Photo by Dr. Dennis Bogdan, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:TimothyLeary-LectureTour-OnStage-SUNYAB-1969.jpg">via Wikimedia Commons</a>. Resized and converted to WebP.</figcaption>
+</figure>
 
 I don't think we are heading for neon and chrome. But the mechanism is already familiar: make it
 frictionless, make it personal, and wait until people stop asking each other what they thought.
