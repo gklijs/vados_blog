@@ -1,0 +1,21 @@
+{
+  "title": "2026",
+  "subTitle": "Society posts from 2026",
+  "image": null,
+  "icon": "calendar",
+  "summary": "Posts about culture, politics and society from 2026.",
+  "content": "<p>Everything I wrote about culture, politics and society in 2026, newest first.</p>",
+  "order": 1,
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "childOrder": "dateDesc",
+  "latest": {
+    "from": "/society/2026",
+    "limit": 50,
+    "depth": 1
+  },
+  "feed": {
+    "title": "Gerard Klijs: society",
+    "limit": 20
+  }
+}

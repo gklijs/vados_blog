@@ -5,7 +5,7 @@
   "icon": "camera",
   "summary": "Photos by Gerard Klijs.",
   "content": "<p>Photos I shot myself, mostly with a Sony RX10 V.</p>",
-  "order": 2,
+  "order": 3,
   "leftNotifications": [],
   "rightNotifications": [],
   "childOrder": "dateDesc",

@@ -1,0 +1,17 @@
+{
+  "title": "Society",
+  "subTitle": "Culture, politics and the world",
+  "image": null,
+  "icon": "account-group",
+  "summary": "Posts about culture, politics and society.",
+  "content": "<p>Posts about culture, politics and society, by year.</p>",
+  "order": 2,
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "childOrder": "dateDesc",
+  "latest": {
+    "from": "/society",
+    "limit": 3,
+    "depth": 2
+  }
+}
