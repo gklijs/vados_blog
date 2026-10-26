@@ -6,6 +6,11 @@
       "icon": "code-braces"
     },
     {
+      "url": "/society",
+      "title": null,
+      "icon": "account-group"
+    },
+    {
       "url": "/photos",
       "title": null,
       "icon": "camera"
