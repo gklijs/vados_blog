@@ -11,6 +11,7 @@ A static site built with [vados](https://github.com/gklijs/vados), served at blo
   has a page under `root/photos/<year>/<slug>/` with the photo as its `image`.
 - Posts carry a `date` in their `page.json`; `tech/` and `tech/2026/` list them newest first (`childOrder: dateDesc`),
   the home page and `tech/` show the latest ones (`latest`), and `tech/2026/` publishes an Atom feed at `/tech/2026/feed.xml`.
+- Posts and page text are written in British English (colour, recognise, optimising); code and identifiers keep their usual spelling.
 - `sass/main.scss` -- overrides Bulma's variables before importing the parts of it the site uses; rebuilt by
   `npm run build` into `public/css/main.min.css`.
 
