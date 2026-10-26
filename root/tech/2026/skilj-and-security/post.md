@@ -71,7 +71,7 @@ Richard Dawkins called natural selection ["the blind watchmaker"](https://en.wik
 it produces things that look designed, without seeing ahead or understanding what it makes. I find
 that a fair description of how a lot of code gets written now. It's also, less comfortably, a fair
 description of how a lot of code gets *attacked*. Nobody needs to understand your codebase anymore to
-find the place where the authorization check and the query disagree. They can ask a model to look,
+find the place where the authorisation check and the query disagree. They can ask a model to look,
 and it will read a surprising amount of it without complaint.
 
 That cuts both ways, and in skilj's case I've mostly been on the friendly side of it. The bugs I
@@ -129,7 +129,7 @@ to be immutable, and people have the [right to be forgotten](https://en.wikipedi
 - **[Private fields](https://github.com/gklijs/SkilJ/blob/main/docs/architecture.md#private-fields-third-protection)**
   are stored as is, but redacted on every event and command read for anyone not entitled to them.
 - **[Blind tags](https://github.com/gklijs/SkilJ/blob/main/docs/architecture.md#blind-tags)** enforce "one
-  account per email address" without storing the address. The tag is a keyed hash of the normalized
+  account per email address" without storing the address. The tag is a keyed hash of the normalised
   value, with a separate key per constraint, so hashes can't be joined across bounded contexts. If the
   key leaks, it [can be rotated](https://github.com/gklijs/SkilJ/blob/main/docs/architecture.md#blind-index-key-rotation),
   and skilj re-wraps every stored hash without needing the original values. It's the one place in

@@ -99,13 +99,13 @@ must not both be accepted.
 
 The DCB specification describes an optimistic approach: you append with a condition that says
 "fail if any event matching my query was added after position N", and retry if it fails. skilj
-chooses something simpler. All commands for one bounded context are serialized through a
+chooses something simpler. All commands for one bounded context are serialised through a
 single Postgres row lock. While a command holds the lock, skilj reads its matching events,
 runs `decide`, appends the result with a gapless sequence number, and commits. Because nothing
 can interleave, there is no conflict to detect and nothing to retry. skilj's test suite races
 two enrolments for the last seat to check this.
 
-Serializing commands sounds slow, and there is a ceiling, so here it is. Concurrent commands
+Serialising commands sounds slow, and there is a ceiling, so here it is. Concurrent commands
 are group-committed: callers queue up, one of them takes the lock and decides the whole batch,
 and commits once. Under load the batches grow, so the lock cost is shared. On a development
 machine, one bounded context handles roughly 400 to 850 commands per second when commands touch
