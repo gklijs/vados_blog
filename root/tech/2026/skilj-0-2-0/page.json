@@ -1,0 +1,11 @@
+{
+  "title": "skilj 0.2.0: access is something you hold",
+  "subTitle": "Capabilities, an access trail and keys that stay out of the process",
+  "image": "/photos/one-at-a-time",
+  "icon": "shield-key-outline",
+  "summary": "skilj 0.2.0 makes access explicit: capabilities replace Role names, every grant becomes an event, and the master key moves out of the process. Why a library that only makes pure decisions makes that easier.",
+  "content": "post.md",
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "date": "2026-10-27"
+}
