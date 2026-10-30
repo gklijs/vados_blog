@@ -23,7 +23,6 @@ npm install
 npm run build
 vados check --source root --img-source imgroot
 vados generate --source root --img-source imgroot --destination public
-python3 serve.py
 ```
 
 ## Deployment

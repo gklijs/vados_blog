@@ -1,0 +1,11 @@
+{
+  "title": "Replacing the newsroom with one workflow",
+  "subTitle": "A daily digest on a local GPU, described by one swamp workflow",
+  "image": "/photos/train-in-a-hurry",
+  "icon": "newspaper-variant-outline",
+  "summary": "Every weekday at 15:15 a swamp workflow gathers news and social posts, has a local model summarise them, and sends an email, a LinkedIn post and an illustration. One shared workflow serves two topics, and it failed silently once.",
+  "content": "post.md",
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "date": "2026-10-30"
+}
