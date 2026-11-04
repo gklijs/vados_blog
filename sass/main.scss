@@ -128,11 +128,12 @@ $blog-pink: #ff7eb6;
   }
 }
 
-// vados hints the navbar's "warning" colour as light (theme-light), as it is in
-// Bulma's defaults; here it is near-black, so its text is set by hand.
-.navbar.is-warning .navbar-item,
-.navbar.is-warning .navbar-link {
-  color: #ffffff;
+// The navbar's "warning" colour is near-black here, so root/main.json says
+// `"navbarTheme": "dark"`, and vados takes its colours from these properties.
+#nav-bar {
+  --vados-nav-ink: #ffffff;
+  --vados-nav-accent: #{$blog-pink};
+  --vados-nav-hover: #{$blog-ink};
 }
 
 // Used as `backgroundClass` in root/main.json, so the white content blocks
@@ -141,22 +142,16 @@ $blog-pink: #ff7eb6;
   background-color: var(--blog-page);
 }
 
-// On touch screens the open menu is near-black; Bulma gives its sub-menu items
-// a background of their own, which left white text on white.
-@include bm.touch {
-  .navbar.is-warning .navbar-menu .navbar-item {
-    background-color: transparent;
-  }
-}
-
-// The pink pop: navbar hover and the active menu tab.
-.navbar.is-warning .navbar-item:hover,
-.navbar.is-warning .navbar-item.is-active {
-  background-color: $blog-ink;
+// The pink pop: vados gives the current page and a hovered item the bar's ink,
+// and this site keeps them pink.
+#nav-bar .navbar-brand > a.navbar-item:hover,
+#nav-bar .navbar-brand > a.navbar-item.is-active,
+#nav-bar .navbar-start > a.navbar-item:hover,
+#nav-bar .navbar-start > a.navbar-item.is-active,
+#nav-bar .navbar-end > a.navbar-item:hover,
+#nav-bar .navbar-link:hover,
+#nav-bar .navbar-link.is-active {
   color: $blog-pink;
-}
-.navbar.is-warning .navbar-item.is-tab.is-active {
-  border-bottom-color: $blog-pink;
 }
 
 // Section headings get a pink underline, so a long post is easy to scan.
