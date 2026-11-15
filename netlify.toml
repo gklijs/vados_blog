@@ -1,17 +1,23 @@
 [build]
   publish = "public"
-  # Netlify's image ships rustup without a toolchain, so one is always installed
-  # and set as default. Rust and vados are restored from the cache below when
-  # available, so the toolchain only downloads on a cold cache and `cargo install`
-  # only rebuilds vados when the pinned version below changes.
-  command = "([ -f \"$HOME/.cargo/env\" ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain none) && source \"$HOME/.cargo/env\" && rustup toolchain install stable --profile minimal && rustup default stable && cargo install vados --version 0.5.0 --locked && npm install && npm run build && vados generate --source root --img-source imgroot --destination public --check-links"
+  # Downloads the vados release binary, checks it against the release's
+  # checksum and builds the site, so no Rust toolchain is installed. The
+  # binary goes to the build's home directory, outside the repository.
+  command = """\
+    archive="vados-$VADOS_VERSION-x86_64-unknown-linux-musl.tar.gz" \
+    && release="https://github.com/gklijs/vados/releases/download/v$VADOS_VERSION" \
+    && mkdir -p "$HOME/vados" \
+    && (cd "$HOME/vados" \
+      && curl --proto '=https' --tlsv1.2 -sSfL -O "$release/$archive" -O "$release/$archive.sha256" \
+      && sha256sum -c "$archive.sha256" \
+      && tar -xzf "$archive") \
+    && npm install && npm run build \
+    && "$HOME/vados/vados-$VADOS_VERSION-x86_64-unknown-linux-musl/vados" generate --source root --img-source imgroot --destination public --check-links\
+    """
 
-# Keeps the Rust toolchain and the compiled vados binary between builds.
-# $HOME is /opt/buildhome on Netlify's build image.
-[[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = ["/opt/buildhome/.cargo", "/opt/buildhome/.rustup"]
+[build.environment]
+  # The vados release this site builds with. Change it to upgrade.
+  VADOS_VERSION = "0.6.0"
 
 # Image variants keep their name when a photo is replaced, so they are cached
 # for a week rather than forever. HTML and CSS keep Netlify's default of
@@ -20,3 +26,10 @@
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# The Markdown version vados publishes next to every page ("markdown" in
+# main.json), for agents and other readers that prefer it over HTML.
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"

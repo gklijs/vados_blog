@@ -1,0 +1,11 @@
+{
+  "title": "vados 0.6.0 and skilj 0.4.0",
+  "subTitle": "Pages for agents, and performance that keeps being checked",
+  "image": "/photos/the-city-across-the-water",
+  "icon": "package-variant-closed",
+  "summary": "vados 0.6.0 can publish a Markdown version of every page, for agents that would rather not read HTML, and skilj 0.4.0 is faster and has weekly workflows to keep it that way. What each one changes, and what this blog needed.",
+  "content": "post.md",
+  "leftNotifications": [],
+  "rightNotifications": [],
+  "date": "2026-11-15T12:00"
+}
