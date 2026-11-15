@@ -18,17 +18,18 @@ A static site built with [vados](https://github.com/gklijs/vados), served at blo
 ## Local development
 
 ```
-cargo install vados
+cargo binstall vados   # or: cargo install vados
 npm install
 npm run build
 vados check --source root --img-source imgroot
-vados generate --source root --img-source imgroot --destination public
+vados generate --source root --img-source imgroot --destination public --check-links
 ```
 
 ## Deployment
 
-Deploys to [Netlify](https://www.netlify.com/): connect the repository and `netlify.toml` installs Rust, `vados`, the Sass
-build.
+Deploys to [Netlify](https://www.netlify.com/): connect the repository, and `netlify.toml` downloads the `vados` release binary,
+checks it against the release's checksum, and runs the Sass build and `generate`. The version is `VADOS_VERSION` in
+`netlify.toml`; change it there to upgrade.
 
 ## Copyright
 

@@ -9,7 +9,6 @@
     "bulma": "^1.0.4"
   },
   "devDependencies": {
-    "netlify-plugin-cache": "^1.0.3",
     "sass": "^1.77.6"
   }
 }
